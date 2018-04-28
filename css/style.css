@@ -79,7 +79,7 @@ header {
   #content-top .article {
     width: 22%;
     height: auto;
-    background-color: #ffb266;
+    background-color: white;
     padding: 30px; }
   #content-top .container-image, #content-top .describtion {
     text-align: center;
@@ -87,7 +87,7 @@ header {
   #content-top .employe-img {
     width: 100%; }
   #content-top .nameEmployee {
-    color: white;
+    color: #ffb266;
     font-weight: bold;
     font-size: 1.3em; }
   #content-top .calculate-btn {

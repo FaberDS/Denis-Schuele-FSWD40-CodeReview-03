@@ -103,11 +103,32 @@ window.onload = function() {
     //--------------------------workThroughForm() just collect all the functions so they are controlled from one head
     function workThroughForm() {
         getValues();
-        grabSelection();
-        genderSelection();
-        actualDate();
-        calculateInsurance();
-        print();
+        if (name.length>=2 && name.length<=30){
+            if (age >= 18 && age <= 120) {
+                if (hpower >= 40 && hpower <= 1100){
+                    grabSelection();
+                    if (!country_value=='choose'){
+                        if (!gender_value=='choose'){
+                            genderSelection();
+                            actualDate();
+                            calculateInsurance();
+                            print();
+                        } else {
+                            alert("Please choose your gender");
+                        }
+                    }  else {
+                    alert("Please choose your country");
+                }
+                } else {
+                alert("Please enter the valid Horse Power value between 40 and 1200 HP");
+                }
+            } else {
+                alert("Please enter valid age between 18 and 120 years");
+            }
+        }   else {
+                alert("Please enter valid name");
+        }
+
     }
     //--------------------------btn set an ankerpoint to the subBtn and triggers workThroughFrom()
     var btn = document.getElementById("subBtn");
