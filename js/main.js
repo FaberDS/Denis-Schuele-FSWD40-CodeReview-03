@@ -15,10 +15,9 @@ window.onload = function() {
     var genderBonus;
     var insurance_price;
     var insurance;
-    var gender = "Mister"
     //--------------------------grabSelection() checks which value is selected and set
-    //							the values of tbe country_factor and country_summand on
-    //							on the needed values
+    //                          the values of tbe country_factor and country_summand on
+    //                          on the needed values
     function grabSelection() {
         var theSelect = document.getElementById("countrySelection");
 
@@ -53,8 +52,8 @@ window.onload = function() {
 
     }
     //--------------------------genderSelection() checks which value is selected and set
-    //							gender_value receives the genderbonus multiplicator 
-    //							gender_txt represent the sex
+    //                          gender_value receives the genderbonus multiplicator 
+    //                          gender_txt represent the sex
     function genderSelection() {
         var theGenderSelect = document.getElementById("genderSelection");
 
@@ -71,10 +70,10 @@ window.onload = function() {
 
     }
     //--------------------------calculateInsurance()calculate the insurance rate on the base of
-    //								For Austria : insurance = horse_power x 100 / age   + 50;
-    //								For Germany: insurance = horse_power x 120 / age  + 100;
-    //								For Italy: insurance = horse_power x 150 / (age+2)  +  150;
-    //							as addition I just added a gender bonus :->
+    //                              For Austria : insurance = horse_power x 100 / age   + 50;
+    //                              For Germany: insurance = horse_power x 120 / age  + 100;
+    //                              For Italy: insurance = horse_power x 150 / (age+2)  +  150;
+    //                          as addition I just added a gender bonus :->
     function calculateInsurance() {
         insurance_price = (((hpower * country_factor) / age) + country_summand);
         insurance = insurance_price.toFixed(2);
@@ -88,8 +87,8 @@ window.onload = function() {
             "<br> Your monthly rate with your selected values leads to" +
             "<br><br><h2 align=center><u style='color:#ffb266;'><em>" + insurance + " €</u></em></h2> " +
             "<br> per month" +
-            "<br><br> we hope you will sign our contract!<br>"+
-            "this offer is reservered for you until"+
+            "<br><br> we hope you will sign our contract!<br>" +
+            "this offer is reservered for you until" +
             "<br><br> <h2 align=center><em>" + datestring + " !</em></h2>";
     }
 
@@ -97,36 +96,37 @@ window.onload = function() {
         d = new Date();
 
         datestring = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear() + " " +
-            (d.getHours()+1) + ":" + d.getMinutes();
+            (d.getHours() + 1) + ":" + d.getMinutes();
         // 16-5-2015 9:50
     }
     //--------------------------workThroughForm() just collect all the functions so they are controlled from one head
     function workThroughForm() {
         getValues();
-        if (name.length>=2 && name.length<=30){
+        if (name.length >= 2 && name.length <= 30) {
             if (age >= 18 && age <= 120) {
-                if (hpower >= 40 && hpower <= 1100){
-                    grabSelection();
-                    if (!country_value=='choose'){
-                        if (!gender_value=='choose'){
-                            genderSelection();
+                if (hpower >= 40 && hpower <= 1100) {
+                    // grabSelection();
+                    // if (country_value === 'choose') {
+
+                        genderSelection();
+                        // if (!gender_value == 'choose') {
                             actualDate();
                             calculateInsurance();
                             print();
-                        } else {
-                            alert("Please choose your gender");
-                        }
-                    }  else {
-                    alert("Please choose your country");
-                }
+                        // } else {
+                        //     alert("Please choose your gender");
+                        // }
+                    // } else {
+                    //     alert("Please choose your country");
+                    // }
                 } else {
-                alert("Please enter the valid Horse Power value between 40 and 1200 HP");
+                    alert("Please enter the valid Horse Power value between 40 and 1200 HP");
                 }
             } else {
                 alert("Please enter valid age between 18 and 120 years");
             }
-        }   else {
-                alert("Please enter valid name");
+        } else {
+            alert("Please enter valid name");
         }
 
     }

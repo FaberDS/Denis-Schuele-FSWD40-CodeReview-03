@@ -1,12 +1,31 @@
-.article {
-  width: 15%; }
+@media screen and (max-width: 700px) {
+  .article {
+    width: 90% !important; }
 
-#content-top {
-  display: block; }
+  #content-top {
+    display: block !important; }
 
-#navbar a {
-  fonst-size: 1.5; }
+  #navbar a {
+    fonst-size: 1em !important; } }
+@media screen and (max-width: 550px) {
+  li {
+    float: none !important; }
 
+  #navbar {
+    box-shadow: 5px 5px 5px grey; }
+
+  ul {
+    height: auto !important;
+    text-align: center !important; }
+
+  #main-content {
+    position: relative;
+    top: 120px; }
+
+  label {
+    font-size: 1em !important; }
+
+  font-size: 1em; }
 .shadow, header #content-header, header #navbar, #content-top, #content-top .article, footer, .introducing {
   box-shadow: 5px 5px 5px grey; }
 
