@@ -15,6 +15,29 @@ window.onload = function() {
     var genderBonus;
     var insurance_price;
     var insurance;
+    //------------------------- get Details of the team and print them
+    //                          For first page
+        var teamDetail1 = teamMembers[0];
+        var contactDetailPrint = document.getElementById("teamDetail1");
+        contactDetailPrint.innerHTML =  '<a href="company.html"> <img class="employe-img" id="img1" alt="Amsterdam Image" src="' + teamDetail1.image + '" alt="image Teammember 1"> </a>' + 
+                                        '<span class="nameEmployee">' + teamDetail1.name + '</span>' +
+                                        '<br><span>' + teamDetail1.email + '</span>';
+                                        '<br><span class="region">' + teamDetail1.region + '</span>';
+
+
+        var teamDetail2 = teamMembers[1];
+        var contactDetailPrint = document.getElementById("teamDetail2");
+        contactDetailPrint.innerHTML =  '<a href="company.html"> <img class="employe-img" id="img2" src="' + teamDetail2.image + '" alt="image Teammember 2"> </a>' + 
+                                        '<span class="nameEmployee">' + teamDetail2.name + '</span>' +
+                                        '<br><span class="region">' + teamDetail2.region + '</span>';
+
+
+        var teamDetail3 = teamMembers[2];
+        var contactDetailPrint = document.getElementById("teamDetail3");
+        contactDetailPrint.innerHTML =  '<a href="company.html"> <img class="employe-img" id="img3" src="' + teamDetail3.image + '" alt="image Teammember 3"> </a>' +
+                                        '<span class="nameEmployee">' + teamDetail3.name + '</span>' +
+                                        '<br><span class="region">' + teamDetail3.region + '</span>';
+
     //--------------------------grabSelection() checks which value is selected and set
     //                          the values of tbe country_factor and country_summand on
     //                          on the needed values
