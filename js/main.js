@@ -43,9 +43,8 @@ window.onload = function() {
                 age += 2;
                 console.log("italy + " + country_factor + country_summand);
                 break;
-            default:
-                title = "This string it's not a level";
-                console.log(title);
+            case 'choose':
+                alert("Please choose a country");
                 break;
         }
 
@@ -105,8 +104,8 @@ window.onload = function() {
         if (name.length >= 2 && name.length <= 30) {
             if (age >= 18 && age <= 120) {
                 if (hpower >= 40 && hpower <= 1100) {
-                    // grabSelection();
-                    // if (country_value === 'choose') {
+                    grabSelection();
+                    // if (country_value == 'choose') {
 
                         genderSelection();
                         // if (!gender_value == 'choose') {
