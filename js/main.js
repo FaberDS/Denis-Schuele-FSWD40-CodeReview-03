@@ -1,8 +1,3 @@
-//--------------------------to be sure that the page is loaded befor the function work
-
-    // document.addEventListener('DOMContentLoaded', function () {
-    // });
-    //--------------------------creating all necesary Variables
 
     var name;
     var age;
@@ -18,29 +13,30 @@
     var insurance;
     //------------------------- get Details of the team and print them
     //                          For first page
-        // var teamDetail1A = teamMembers[0];
-        // var contactDetail1Print = document.getElementById("teamDetail1");
-        //  var contactDetailPrintImg = document.getElementById("teamMember1img")
-        // contactDetail1Print.innerHTML = '<img class="employe-img" id="img1" alt="Amsterdam Image" src="' + teamDetail1A.image + '" alt="image Teammember 1">'+
-        //                                 '<span class="nameEmployee">' + teamDetail1A.name + '</span>' +
-        //                                 '<br><span>' + teamDetail1A.email + '</span>' +
-        //                                 '<br><span class="region">' + teamDetail1A.region + '</span>';
+ /*
+     var teamDetail1A = teamMembers[0];
+         var contactDetail1Print = document.getElementById("teamDetail1");
+          var contactDetailPrintImg = document.getElementById("teamMember1img");
+         contactDetail1Print.innerHTML = '<img class="employe-img" id="img1" alt="Amsterdam Image" src="' + teamDetail1A.image + '" alt="image Teammember 1">'+
+                                         '<span class="nameEmployee">' + teamDetail1A.name + '</span>' +
+                                         '<br><span>' + teamDetail1A.email + '</span>' +
+                                         '<br><span class="region">' + teamDetail1A.region + '</span>';
 
-        // var teamDetail2 = teamMembers[1];
-        // var contactDetail2Print = document.getElementById("teamDetail2");
-        // contactDetail2Print.innerHTML = '<img class="employe-img" id="img2" src="' + teamDetail2.image + '" alt="image Teammember 2">' + 
-        //                                 '<span class="nameEmployee">' + teamDetail2.name + '</span>' +
-        //                                 '<br><span>' + teamDetail2.email + '</span>' +
-        //                                 '<br><span class="region">' + teamDetail2.region + '</span>';
+         var teamDetail2 = teamMembers[1];
+         var contactDetail2Print = document.getElementById("teamDetail2");
+         contactDetail2Print.innerHTML = '<img class="employe-img" id="img2" src="' + teamDetail2.image + '" alt="image Teammember 2">' + 
+                                         '<span class="nameEmployee">' + teamDetail2.name + '</span>' +
+                                         '<br><span>' + teamDetail2.email + '</span>' +
+                                         '<br><span class="region">' + teamDetail2.region + '</span>';
 
 
-        // var teamDetail3 = teamMembers[2];
-        // var contactDetail3Print = document.getElementById("teamDetail3");
-        // contactDetail3Print.innerHTML = '<img class="employe-img" src="' + teamDetail3.image + '" alt="image Teammember 3">' +
-        //                                 '<span class="nameEmployee">' + teamDetail3.name + '</span>' +
-        //                                 '<br><span>' + teamDetail3.email + '</span>' +
-        //                                 '<br><span class="region">' + teamDetail3.region + '</span>';
-
+         var teamDetail3 = teamMembers[2];
+         var contactDetail3Print = document.getElementById("teamDetail3");
+         contactDetail3Print.innerHTML = '<img class="employe-img" src="' + teamDetail3.image + '" alt="image Teammember 3">' +
+                                        '<span class="nameEmployee">' + teamDetail3.name + '</span>' +
+                                         '<br><span>' + teamDetail3.email + '</span>' +
+                                         '<br><span class="region">' + teamDetail3.region + '</span>';
+*/
 
     //--------------------------grabSelection() checks which value is selected and set
     //                          the values of tbe country_factor and country_summand on
@@ -140,8 +136,10 @@
         // 16-5-2015 9:50
     }
      var btn = document.getElementById("buttoN");
-    btn.addEventListener('click', workThoughForm, false);
+    btn.addEventListener('click', workThroughForm);
+
     //--------------------------workThroughForm() just collect all the functions so they are controlled from one head
+    
     function workThroughForm() {
         getValues();
         if (name.length >= 2 && name.length <= 30) {
