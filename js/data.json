@@ -1,16 +1,16 @@
 var teamMembers = [{"name":"Olivia Bayer", 
 					"email":"oli@index.com",
-					"region" :"Austria",
+					"region":"Austria",
 					"image":"img/employee1.png"
 					},{
 					"name":"Jonathan Schmidt",
 					"email":"jon@index.com",
-					"region" :"Germany",
+					"region":"Germany",
 					"image":"img/employee2.png"
 					},{
 					"name":"Jürgen Fritz", 
 					"email":"fritz@index.com",
-					"region" :"Italy",
+					"region":"Italy",
 					"image":"img/employee3.png"
 					}
 				];

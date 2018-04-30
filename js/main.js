@@ -11,33 +11,10 @@
     var genderBonus;
     var insurance_price;
     var insurance;
-    //------------------------- get Details of the team and print them
-    //                          For first page
- /*
-     var teamDetail1A = teamMembers[0];
-         var contactDetail1Print = document.getElementById("teamDetail1");
-          var contactDetailPrintImg = document.getElementById("teamMember1img");
-         contactDetail1Print.innerHTML = '<img class="employe-img" id="img1" alt="Amsterdam Image" src="' + teamDetail1A.image + '" alt="image Teammember 1">'+
-                                         '<span class="nameEmployee">' + teamDetail1A.name + '</span>' +
-                                         '<br><span>' + teamDetail1A.email + '</span>' +
-                                         '<br><span class="region">' + teamDetail1A.region + '</span>';
-
-         var teamDetail2 = teamMembers[1];
-         var contactDetail2Print = document.getElementById("teamDetail2");
-         contactDetail2Print.innerHTML = '<img class="employe-img" id="img2" src="' + teamDetail2.image + '" alt="image Teammember 2">' + 
-                                         '<span class="nameEmployee">' + teamDetail2.name + '</span>' +
-                                         '<br><span>' + teamDetail2.email + '</span>' +
-                                         '<br><span class="region">' + teamDetail2.region + '</span>';
-
-
-         var teamDetail3 = teamMembers[2];
-         var contactDetail3Print = document.getElementById("teamDetail3");
-         contactDetail3Print.innerHTML = '<img class="employe-img" src="' + teamDetail3.image + '" alt="image Teammember 3">' +
-                                        '<span class="nameEmployee">' + teamDetail3.name + '</span>' +
-                                         '<br><span>' + teamDetail3.email + '</span>' +
-                                         '<br><span class="region">' + teamDetail3.region + '</span>';
-*/
-
+    var b;
+    var x;
+    var y;
+   
     //--------------------------grabSelection() checks which value is selected and set
     //                          the values of tbe country_factor and country_summand on
     //                          on the needed values
@@ -46,7 +23,7 @@
 
         country_value = theSelect.options[theSelect.selectedIndex].value;
         country_txt = theSelect.options[theSelect.selectedIndex].text;
-
+        b = document.getElementById("countrySelection").selectedIndex;
 
         //--------switch to get
         switch (country_value) {
@@ -68,7 +45,7 @@
                 break;
             case 'choose':
                 alert("Please choose a country");
-                return;
+                return false;
         }
 
 
@@ -81,6 +58,11 @@
 
         gender_value = theGenderSelect.options[theGenderSelect.selectedIndex].value;
         gender_txt = theGenderSelect.options[theGenderSelect.selectedIndex].text;
+        x = document.getElementById("genderSelection").selectedIndex;
+        console.log(y + ","+ x);
+
+
+        
         //--------switch to get
         switch (gender_txt) {
             case 'Mr.':
@@ -91,8 +73,7 @@
                 genderBonus = 1.1199;
                 console.log(genderBonus + gender_value);
                 break;
-            case 'choose':
-                alert("Please choose your sex");
+            default:
                 return;
         }
         
@@ -143,22 +124,22 @@
     function workThroughForm() {
         getValues();
         if (name.length >= 2 && name.length <= 30) {
-            if (age >= 18 && age <= 120) {
-                if (hpower >= 40 && hpower <= 1100) {
+            if (age >= 18 && age <= 120 && !isNaN(age)) {
+                if (hpower >= 40 && hpower <= 1100 && !isNaN(age)) {
                     grabSelection();
-                    // if (country_value == 'choose') {
-
-                    genderSelection();
-                        // if (!gender_value == 'choose') {
-                    actualDate();
-                    calculateInsurance();
-                    print();
-                        // } else {
-                        //     alert("Please choose your gender");
-                        // }
-                    // } else {
-                    //     alert("Please choose your country");
-                    // }
+                    if (b == 0) {
+                        alert("Please choose your country.");
+                     } else {
+                        genderSelection();
+                    
+                        if (x == 0) {
+                            alert("Please choose your sex.");
+                        } else {
+                            actualDate();
+                            calculateInsurance();
+                            print();                   
+                        }
+                    }
                 } else {
                     alert("Please enter the valid Horse Power value between 40 and 1200 HP");
                 }
