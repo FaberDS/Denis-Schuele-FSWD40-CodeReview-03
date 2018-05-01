@@ -44,7 +44,6 @@
                 console.log("italy + " + country_factor + country_summand);
                 break;
             case 'choose':
-                alert("Please choose a country");
                 return false;
         }
 
@@ -119,6 +118,8 @@
     }
      var btn = document.getElementById("buttoN");
     btn.addEventListener('click', workThroughForm);
+
+
 
     //--------------------------workThroughForm() just collect all the functions so they are controlled from one head
     
