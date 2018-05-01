@@ -59,18 +59,18 @@
         gender_value = theGenderSelect.options[theGenderSelect.selectedIndex].value;
         gender_txt = theGenderSelect.options[theGenderSelect.selectedIndex].text;
         x = document.getElementById("genderSelection").selectedIndex;
-        console.log(y + ","+ x);
+        // console.log(x);
 
 
         
         //--------switch to get
         switch (gender_txt) {
             case 'Mr.':
-                genderBonus = 1;
+                gender_bonus = 1;
                 console.log(genderBonus + gender_value);
                 break;
             case 'Ms.':
-                genderBonus = 1.1199;
+                gender_bonus = 1.1199;
                 console.log(genderBonus + gender_value);
                 break;
             default:
@@ -92,8 +92,9 @@
     //                              For Italy: insurance = horse_power x 150 / (age+2)  +  150;
     //                          as addition I just added a gender bonus :->
     function calculateInsurance() {
-        insurance_price = ((((hpower * country_factor) / age) + country_summand)*gender_value);
+        insurance_price = ((((hpower * country_factor) / age) + country_summand)*gender_bonus);
         insurance = insurance_price.toFixed(2);
+        console.log(insurance_price);
     }
 
     //-------------------------- print() display the offer in the Insurance field
